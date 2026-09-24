@@ -189,7 +189,11 @@ function Footer() {
         <Database size={13} />
         TigerGraph Savanna · GraphRAG · LangGraph
       </span>
+      <div className="footer-credit">
+        SANSKRITI SHUKLA <span>×</span> TEAM KUROMI · 2026
+      </div>
     </footer>
+    
   )
 }
 
