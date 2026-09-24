@@ -125,7 +125,7 @@ foxtrail-agent/
 ├── build_answers.py            # batch-run all cases → cases/*.json
 ├── api_server.py               # FastAPI server for the UI
 ├── case_pack.csv               # the 20 benchmark cases
-├── answers/                    # one JSON per case (required output)
+├── cases/                    # one JSON per case (required output)
 └── frontend/                   # React analyst console
 ```
 

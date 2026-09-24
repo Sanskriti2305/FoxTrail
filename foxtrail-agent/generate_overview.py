@@ -1,5 +1,5 @@
 """
-Reads all answers/*.json + case_pack.csv and produces the exact
+Reads all cases/*.json + case_pack.csv and produces the exact
 demo-overview.json shape the frontend expects.
 
 Usage:
@@ -11,7 +11,7 @@ import json
 import csv
 from pathlib import Path
 
-ANSWERS_DIR = Path("answers")
+ANSWERS_DIR = Path("cases")
 CASE_PACK = Path("case_pack.csv")
 OUTPUT = Path("overview.json")
 

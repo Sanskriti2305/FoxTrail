@@ -1,10 +1,9 @@
 """
 Phase 7: runs every case in case_pack.csv through the full pipeline and writes
-one answer JSON file per case into answers/, in the format the hackathon requires.
+one answer JSON file per case into cases/, in the format the hackathon requires.
 
 Usage:
-    python build_answers.py            # all cases in case_pack.csv
-    python build_answers.py HHG-003    # just one case (for spot-checks)
+    python build_cases.py            # all cases in case_pack.csv
 """
 from dotenv import load_dotenv
 load_dotenv()
@@ -19,7 +18,7 @@ from pathlib import Path
 from graph import build_graph
 
 _graph = build_graph()
-OUTPUT_DIR = Path("answers")
+OUTPUT_DIR = Path("cases")
 DELAY_BETWEEN_CASES = 5  # seconds, gentle on rate limits
 
 

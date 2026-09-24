@@ -1,7 +1,7 @@
 """Thin web/API layer for the Foxtrail investigation console.
 
 Keeps the existing LangGraph/TigerGraph investigation pipeline untouched.
-Page 1 reads the completed case records from answers/ until the live runner
+Page 1 reads the completed case records from cases/ until the live runner
 is connected in the next UI phase.
 """
 from pathlib import Path
@@ -11,7 +11,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 ROOT = Path(__file__).resolve().parent
-ANSWERS = ROOT / "answers"
+ANSWERS = ROOT / "cases"
 CASE_PACK = ROOT / "case_pack.csv"
 
 app = FastAPI(title="Foxtrail Fraud Investigation API", version="0.1.0")
