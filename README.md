@@ -6,6 +6,7 @@ FoxTrail is an AI agent that investigates fraud signals, gathers evidence from a
 
 Given a transaction flagged by a risk score, a customer report, or an analyst request, FoxTrail traces the cardholder's history, checks for shared devices and prior fraud cases, assesses the likely fraud pattern, decides on an action under a written policy, explains its reasoning, and writes the outcome back into the graph as memory for future investigations.
 
+**[Live demo →](https://fox-trail-zeta.vercel.app/)**
 ---
 
 ## Architecture
