@@ -1,0 +1,659 @@
+{
+  "metrics": {
+    "total_cases": 20,
+    "fraud_cases": 13,
+    "legitimate_cases": 7,
+    "uncertain_cases": 0,
+    "fraud_exposure_usd": 2335.98,
+    "reported_exposure_usd": 3623.21,
+    "sar_cases": 1,
+    "graph_written": 20
+  },
+  "cases": [
+    {
+      "case_id": "HHG-001",
+      "customer_id": "C12382",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 77.07,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-001 was automatically closed as legitimate after a review of the flagged transaction details, card timeline, and historical cases revealed no suspicious patterns or linked device profiles. With a very low fraud probability of 0.05, which falls well below the 0.15 stopping threshold, the initial recommendation to close the case as no fraud required no changes.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-12-05 01:55:28",
+      "flagged_txn_id": "3514030"
+    },
+    {
+      "case_id": "HHG-002",
+      "customer_id": "C11891",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 292.36,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-002 was reviewed and verified as legitimate with a very low fraud probability of 0.05 and an exposure of $292.36. Investigation confirmed there were no matching past cases, device profiles, or suspicious transaction patterns. Because the risk score fell well below the 0.15 stopping threshold, the case was automatically closed with no fraud detected.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-11-22 23:27:07",
+      "flagged_txn_id": "3478782"
+    },
+    {
+      "case_id": "HHG-003",
+      "customer_id": "C08623",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "none",
+      "exposure_usd": 49,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-003 was classified as fraud after the customer directly reported the $49.00 transaction as unauthorized during intake. Although the initial automated fraud probability was low at 0.15 with no suspicious patterns or device profiles found, the direct customer denial takes precedence. Consequently, the card was blocked, a formal case was created, and the transaction was confirmed as fraudulent based on cardholder testimony.",
+      "final_actions": [
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [],
+      "opened_at": "2016-12-10 15:01:21",
+      "flagged_txn_id": "3530164"
+    },
+    {
+      "case_id": "HHG-004",
+      "customer_id": "C08106",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "none",
+      "exposure_usd": 128.33,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-004 was confirmed as fraud with an exposure of $128.33 and no detected fraud patterns. Although the initial automated model assessed the fraud probability at a low 0.15, the customer proactively reported the transaction as unauthorized upon intake. This direct customer denial took precedence over the model score, prompting an L1 routing to block the card and officially create the fraud case.",
+      "final_actions": [
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [],
+      "opened_at": "2016-12-29 07:53:54",
+      "flagged_txn_id": "3583227"
+    },
+    {
+      "case_id": "HHG-005",
+      "customer_id": "C02923",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 100.07,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-005 was automatically closed as legitimate with zero financial exposure after investigation confirmed no fraud pattern. Although the transaction's device profile was shared by 223 other cards, it was determined to be a generic operating system and browser fingerprint rather than a sign of a fraud ring. The fraud probability remained at 0.05 from start to finish, falling well below the 0.15 stopping threshold for automated closure.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-12-08 03:38:37",
+      "flagged_txn_id": "3523199"
+    },
+    {
+      "case_id": "HHG-006",
+      "customer_id": "C07297",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_fraud",
+      "exposure_usd": 482.12,
+      "fraud_probability": 1.0,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-006 is confirmed card-not-present fraud with an exposure of $482.12. The customer proactively reported the transaction as unauthorized, which took precedence over the system's maximum fraud probability score of 1.0. Although the associated device profile was shared by over a thousand other cards and treated as a generic fingerprint, the customer's direct denial triggered the final action to block the card.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-11-22 02:30:00",
+      "flagged_txn_id": "3476682"
+    },
+    {
+      "case_id": "HHG-007",
+      "customer_id": "C09933",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 111.92,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-007 involved a low-risk in-person or unlinked online transaction of $111.92 with a fraud probability of just 0.05. A review of transaction details, card history, and past cases revealed no suspicious patterns or linked devices. Because the fraud probability fell well below the 0.15 stopping threshold, the case was automatically closed with no fraud detected.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-12-05 03:46:14",
+      "flagged_txn_id": "3514948"
+    },
+    {
+      "case_id": "HHG-008",
+      "customer_id": "C13171",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 55.68,
+      "fraud_probability": 0.95,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-008 is confirmed fraud with a 95 percent probability and a financial exposure of $55.68 involving a card-not-present transaction on a new device. Although the device fingerprint was shared broadly by hundreds of other cards and not linked to a specific fraud ring, the customer directly reported the charge as unauthorized. Because the customer's denial takes precedence, the card was blocked at L1 and the case was closed as fraud.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-20 03:08:56",
+      "flagged_txn_id": "3558054"
+    },
+    {
+      "case_id": "HHG-009",
+      "customer_id": "C08299",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "none",
+      "exposure_usd": 30.02,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-009 was confirmed as fraud after a customer directly reported an unauthorized $30.02 transaction, overriding the low initial model-assessed fraud probability of 0.15. Investigation steps included retrieving the transaction details, card ID, and timeline, while confirming no device profile or similar past cases existed. Following the customer's denial, the card was blocked and the case was routed to Level 1 for standard fraud handling.",
+      "final_actions": [
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [],
+      "opened_at": "2016-12-28 17:10:53",
+      "flagged_txn_id": "3581141"
+    },
+    {
+      "case_id": "HHG-010",
+      "customer_id": "C10434",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 1000.03,
+      "fraud_probability": 1.0,
+      "sar": true,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-010 resulted in a confirmed fraud verdict with a total financial exposure of $1,000.03. The transaction was flagged as a card-not-present purchase made from a new device, and customer validation confirmed the cardholder did not authorize the purchase. Because the customer denied the transaction and the exposure exceeded $1,000, the card was blocked and a formal report was filed.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "FILE_REPORT",
+          "route": "L2",
+          "reason": "R2: exposure exceeds $1,000 or links to a shared device"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "VERIFY_WITH_CUSTOMER",
+          "route": "auto",
+          "reason": "R1 (extended): fraud probability 1.0 is high, but rests on a single signal with no external corroboration; verify before blocking per the policy's stated intent not to block a legitimate customer"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-02 18:18:27",
+      "flagged_txn_id": "3506725"
+    },
+    {
+      "case_id": "HHG-011",
+      "customer_id": "C11923",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 131.3,
+      "fraud_probability": 0.95,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-011 involves a confirmed fraudulent card-not-present transaction for $131.30 made from a new device. The fraud model assessed the probability at 0.95, and the customer independently contacted support to report the charge as unauthorized. Because the customer directly denied the transaction, the card was blocked and the case was officially classified as fraud.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-29 06:27:44",
+      "flagged_txn_id": "3583368"
+    },
+    {
+      "case_id": "HHG-012",
+      "customer_id": "C05876",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 30.91,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-012 involving a 30.91 dollar transaction was automatically closed as legitimate with a very low fraud probability of 0.05. Investigation revealed standard in-person or unlinked online transaction details with no linked device profile and no history of similar closed cases. Because no suspicious patterns were found and the risk score fell well below the 0.15 threshold, the initial recommendation to close the case without action remained unchanged.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-12-18 05:00:31",
+      "flagged_txn_id": "3553342"
+    },
+    {
+      "case_id": "HHG-013",
+      "customer_id": "C07671",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 35.66,
+      "fraud_probability": 1.0,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-013 involving a 35.66 dollar card-not-present transaction on a new device resulted in a confirmed fraud verdict. Although the device fingerprint was generic and tied to over five hundred other cards, the customer confirmed they did not make the purchase and still possessed their card. Based on this customer denial, the card was blocked and the case was closed as proven fraud.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "VERIFY_WITH_CUSTOMER",
+          "route": "auto",
+          "reason": "R1 (extended): fraud probability 1.0 is high, but rests on a single signal with no external corroboration; verify before blocking per the policy's stated intent not to block a legitimate customer"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-09 05:39:29",
+      "flagged_txn_id": "3526826"
+    },
+    {
+      "case_id": "HHG-014",
+      "customer_id": "C13487",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 74.96,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "analyst_request",
+      "summary": "Case HHG-014 for a $74.96 transaction was automatically closed as legitimate after falling at the 0.15 fraud probability stopping threshold with no suspicious patterns found. Although the device profile was shared by 103 other cards, analysts determined this was merely a generic operating system and browser fingerprint rather than a sign of a fraud ring. No similar past cases were found, and the initial recommendation to clear the transaction remained unchanged throughout the review.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.15 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.15 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-11-22 20:11:00",
+      "flagged_txn_id": "3478561"
+    },
+    {
+      "case_id": "HHG-015",
+      "customer_id": "C03042",
+      "verdict": "legitimate",
+      "status": "closed_legitimate",
+      "pattern": "none",
+      "exposure_usd": 599.94,
+      "fraud_probability": 0.05,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-015 for $599.94 was automatically closed as legitimate after review showed no suspicious patterns and a low fraud probability of 0.05. Although the device profile was shared by 15 other cards, it was determined to be a generic browser fingerprint rather than an indicator of fraud. A check of past cases revealed no similar history, and the initial recommendation remained unchanged throughout the automated process.",
+      "final_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "CLOSE_NO_FRAUD",
+          "route": "auto",
+          "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+        }
+      ],
+      "opened_at": "2016-11-17 19:03:36",
+      "flagged_txn_id": "3464869"
+    },
+    {
+      "case_id": "HHG-016",
+      "customer_id": "C09988",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "none",
+      "exposure_usd": 59.67,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-016 involved a $59.67 transaction that initially had a low fraud probability of 0.15 and no established fraud patterns. However, the customer directly reported the charge as unauthorized when opening the case. Because direct customer denial takes precedence over automated scoring, the case was confirmed as fraud. Consequently, the card was blocked at L1 and a new case was automatically created.",
+      "final_actions": [
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [],
+      "opened_at": "2016-12-12 01:39:08",
+      "flagged_txn_id": "3534820"
+    },
+    {
+      "case_id": "HHG-017",
+      "customer_id": "C04570",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 100.09,
+      "fraud_probability": 0.95,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-017 resulted in a confirmed fraud verdict for a $100.09 card-not-present transaction originating from a generic, high-traffic device profile. Although no historical fraud rings were linked, the transaction was flagged due to a 0.95 fraud probability. The investigation concluded definitively after customer validation confirmed they neither made the purchase nor relinquished their card. Consequently, the card was successfully blocked at L1.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "VERIFY_WITH_CUSTOMER",
+          "route": "auto",
+          "reason": "R1 (extended): fraud probability 0.95 is high, but rests on a single signal with no external corroboration; verify before blocking per the policy's stated intent not to block a legitimate customer"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-11-12 00:46:24",
+      "flagged_txn_id": "3450629"
+    },
+    {
+      "case_id": "HHG-018",
+      "customer_id": "C02354",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "none",
+      "exposure_usd": 39.08,
+      "fraud_probability": 0.15,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "customer_report",
+      "summary": "Case HHG-018 was resolved as confirmed fraud with a financial exposure of $39.08. Although the risk model initially assessed the fraud probability at a low 0.15 with no broader patterns found, the customer directly reported the transaction as unauthorized upon intake. Based on this direct cardholder denial, the card was blocked and the case was officially logged.",
+      "final_actions": [
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [],
+      "opened_at": "2016-11-27 14:41:26",
+      "flagged_txn_id": "3491361"
+    },
+    {
+      "case_id": "HHG-019",
+      "customer_id": "C07987",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 99.92,
+      "fraud_probability": 0.95,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-019 concluded with a confirmed fraud verdict for a $99.92 card-not-present transaction on a new device. Although the device fingerprint was shared across multiple cards and not linked to a fraud ring, the customer explicitly denied making the purchase during validation. Based on this customer denial, the card was blocked.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "VERIFY_WITH_CUSTOMER",
+          "route": "auto",
+          "reason": "R1 (extended): fraud probability 0.95 is high, but rests on a single signal with no external corroboration; verify before blocking per the policy's stated intent not to block a legitimate customer"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-01 22:28:53",
+      "flagged_txn_id": "3503878"
+    },
+    {
+      "case_id": "HHG-020",
+      "customer_id": "C12265",
+      "verdict": "fraud",
+      "status": "closed_fraud",
+      "pattern": "card_not_present_new_device",
+      "exposure_usd": 125.08,
+      "fraud_probability": 0.95,
+      "sar": false,
+      "written_to_graph": true,
+      "trigger_type": "risk_score",
+      "summary": "Case HHG-020 resulted in a confirmed fraud verdict with 95 percent probability for a $125.08 card-not-present transaction on a new device. Although the device fingerprint matched hundreds of other cards and indicated no organized ring, customer validation confirmed that the cardholder did not make the purchase and still possessed the card. Based on this customer denial, the card was blocked and the case was closed as fraud.",
+      "final_actions": [
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        },
+        {
+          "action": "BLOCK_CARD",
+          "route": "L1",
+          "reason": "R2: customer denied the transaction"
+        }
+      ],
+      "initial_actions": [
+        {
+          "action": "VERIFY_WITH_CUSTOMER",
+          "route": "auto",
+          "reason": "R1 (extended): fraud probability 0.95 is high, but rests on a single signal with no external corroboration; verify before blocking per the policy's stated intent not to block a legitimate customer"
+        },
+        {
+          "action": "CREATE_CASE",
+          "route": "auto",
+          "reason": "Section 3a: fraud probability has reached 0.30"
+        }
+      ],
+      "opened_at": "2016-12-03 12:04:26",
+      "flagged_txn_id": "3509359"
+    }
+  ]
+}

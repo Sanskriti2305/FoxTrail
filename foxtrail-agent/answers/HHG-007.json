@@ -1,0 +1,94 @@
+{
+  "case": {
+    "case_id": "HHG-007",
+    "customer_id": "C09933",
+    "card_id": "C0993315868",
+    "status": "closed_legitimate",
+    "verdict": "legitimate",
+    "fraud_probability": 0.05,
+    "pattern": "none",
+    "pattern_description": "No fraud pattern was found as the transaction is a legitimate in-person purchase consistent with the cardholder's established history.",
+    "exposure_usd": 111.92,
+    "summary": "Case HHG-007 was automatically closed as legitimate after a review of the $111.92 transaction revealed no suspicious patterns, resulting in a low fraud probability of 0.05. The investigation confirmed valid card details and timeline, though no device profile was linked due to the in-person nature of the purchase. Furthermore, a check for similar past cases returned zero results. Because the risk score fell well below the 0.15 stopping threshold, the initial recommendation to close the case without action remained unchanged.",
+    "evidence": [
+      {
+        "claim": "Flagged transaction details retrieved",
+        "source": "graph",
+        "ref": "query:get_transaction_details",
+        "entity_ids": [
+          "3514948"
+        ]
+      },
+      {
+        "claim": "Card ID resolved from case hint",
+        "source": "graph",
+        "ref": "query:resolve_case_card_id",
+        "entity_ids": [
+          "C09933-K2"
+        ]
+      },
+      {
+        "claim": "Card transaction timeline retrieved",
+        "source": "graph",
+        "ref": "query:get_card_timeline",
+        "entity_ids": [
+          "C0993315868"
+        ]
+      },
+      {
+        "claim": "Checked for similar past closed cases (0 found)",
+        "source": "graph",
+        "ref": "query:find_similar_closed_cases",
+        "entity_ids": [
+          "C0993315868"
+        ]
+      },
+      {
+        "claim": "No device profile linked to this transaction (in-person or unlinked online txn)",
+        "source": "graph",
+        "ref": "query:get_transaction_device",
+        "entity_ids": [
+          "3514948"
+        ]
+      },
+      {
+        "claim": "Case written to graph as CASE-HHG-007",
+        "source": "graph",
+        "ref": "query:write_case_to_graph",
+        "entity_ids": [
+          "CASE-HHG-007"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "connected_card_ids": [],
+    "stop_reason": "Fraud probability 0.05 meets the Section 6 stopping threshold.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-HHG-007"
+  },
+  "sar": {
+    "file_required": false,
+    "reason": "No FILE_REPORT criteria met: exposure $111.92 does not exceed the $1,000 R2 threshold; no shared-device link was found (R6); pattern was not classified as undocumented (R9)."
+  },
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "No pattern found; fraud probability 0.05 at or below 0.15 (Section 6 stopping threshold)"
+      }
+    ],
+    "what_changed": "nothing"
+  },
+  "evidence_requests": [],
+  "metrics": {
+    "tool_calls": 6
+  }
+}

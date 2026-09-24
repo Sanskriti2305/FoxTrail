@@ -1,0 +1,115 @@
+{
+  "case": {
+    "case_id": "HHG-006",
+    "customer_id": "C07297",
+    "card_id": "C0729713729455.0150.0mastercard166.0debit",
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "The transaction was executed online for $482.12 using a transparent proxy and a shared generic device, contrasting sharply with the card's historical in-person usage profile.",
+    "exposure_usd": 482.12,
+    "summary": "Case HHG-006 is confirmed as card-not-present fraud with an exposure of $482.12 and a high fraud probability of 0.95. The customer directly reported the transaction as unauthorized at intake, which takes precedence over model scoring and directly triggered the card block. Although a shared device profile was flagged, it was determined to be a generic browser fingerprint rather than an active fraud ring.",
+    "evidence": [
+      {
+        "claim": "Flagged transaction details retrieved",
+        "source": "graph",
+        "ref": "query:get_transaction_details",
+        "entity_ids": [
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Card ID resolved from case hint",
+        "source": "graph",
+        "ref": "query:resolve_case_card_id",
+        "entity_ids": [
+          "C07297-K1"
+        ]
+      },
+      {
+        "claim": "Card transaction timeline retrieved",
+        "source": "graph",
+        "ref": "query:get_card_timeline",
+        "entity_ids": [
+          "C0729713729455.0150.0mastercard166.0debit"
+        ]
+      },
+      {
+        "claim": "Checked for similar past closed cases (0 found)",
+        "source": "graph",
+        "ref": "query:find_similar_closed_cases",
+        "entity_ids": [
+          "C0729713729455.0150.0mastercard166.0debit"
+        ]
+      },
+      {
+        "claim": "Device profile found for flagged transaction",
+        "source": "graph",
+        "ref": "query:get_transaction_device",
+        "entity_ids": [
+          "3476682",
+          "Trident/7.0Windows 7ie 11.0 for desktop1920x1080"
+        ]
+      },
+      {
+        "claim": "Device profile shared by 1094 cards \u2014 treated as a generic OS/browser/screen fingerprint, not a ring signal",
+        "source": "graph",
+        "ref": "query:find_shared_device_cards",
+        "entity_ids": [
+          "Trident/7.0Windows 7ie 11.0 for desktop1920x1080"
+        ]
+      },
+      {
+        "claim": "Case written to graph as CASE-HHG-006",
+        "source": "graph",
+        "ref": "query:write_case_to_graph",
+        "entity_ids": [
+          "CASE-HHG-006"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "connected_card_ids": [],
+    "stop_reason": "Customer's own unsolicited fraud report is decisive (Section 6).",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-HHG-006"
+  },
+  "sar": {
+    "file_required": false,
+    "reason": "No FILE_REPORT criteria met: exposure $482.12 does not exceed the $1,000 R2 threshold; no shared-device link was found (R6); pattern was not classified as undocumented (R9)."
+  },
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Section 3a: fraud probability has reached 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Section 3a: fraud probability has reached 0.30"
+      },
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: customer denied the transaction"
+      }
+    ],
+    "what_changed": "Customer directly reported this transaction as unauthorized at intake (model-assessed probability was 0.95); the customer's own report takes precedence, and the case was confirmed as fraud."
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 0,
+      "assumed_response": "Customer C07297 message: 'I never made this $482.12 purchase. Please check my card.' Refers to 3476682.",
+      "response_source": "customer_initiated_report"
+    }
+  ],
+  "metrics": {
+    "tool_calls": 7
+  }
+}

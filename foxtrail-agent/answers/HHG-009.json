@@ -1,0 +1,106 @@
+{
+  "case": {
+    "case_id": "HHG-009",
+    "customer_id": "C08299",
+    "card_id": "C0829913026216.0150.0visa226.0credit",
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.85,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "The online transaction of $30.02 was disputed by customer C08299 as unauthorized and lacks a linked device profile, fitting unauthorized card-not-present activity.",
+    "exposure_usd": 30.02,
+    "summary": "Case HHG-009 was classified as card-not-present fraud with an exposure of $30.02 and an initial model fraud probability of 0.85. The customer proactively reported the transaction as unauthorized, which took precedence over the automated risk score. Based on the customer denial, the card was blocked and the case was officially confirmed as fraud.",
+    "evidence": [
+      {
+        "claim": "Flagged transaction details retrieved",
+        "source": "graph",
+        "ref": "query:get_transaction_details",
+        "entity_ids": [
+          "3581141"
+        ]
+      },
+      {
+        "claim": "Card ID resolved from case hint",
+        "source": "graph",
+        "ref": "query:resolve_case_card_id",
+        "entity_ids": [
+          "C08299-K1"
+        ]
+      },
+      {
+        "claim": "Card transaction timeline retrieved",
+        "source": "graph",
+        "ref": "query:get_card_timeline",
+        "entity_ids": [
+          "C0829913026216.0150.0visa226.0credit"
+        ]
+      },
+      {
+        "claim": "Checked for similar past closed cases (0 found)",
+        "source": "graph",
+        "ref": "query:find_similar_closed_cases",
+        "entity_ids": [
+          "C0829913026216.0150.0visa226.0credit"
+        ]
+      },
+      {
+        "claim": "No device profile linked to this transaction (in-person or unlinked online txn)",
+        "source": "graph",
+        "ref": "query:get_transaction_device",
+        "entity_ids": [
+          "3581141"
+        ]
+      },
+      {
+        "claim": "Case written to graph as CASE-HHG-009",
+        "source": "graph",
+        "ref": "query:write_case_to_graph",
+        "entity_ids": [
+          "CASE-HHG-009"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "connected_card_ids": [],
+    "stop_reason": "Customer's own unsolicited fraud report is decisive (Section 6).",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-HHG-009"
+  },
+  "sar": {
+    "file_required": false,
+    "reason": "No FILE_REPORT criteria met: exposure $30.02 does not exceed the $1,000 R2 threshold; no shared-device link was found (R6); pattern was not classified as undocumented (R9)."
+  },
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Section 3a: fraud probability has reached 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Section 3a: fraud probability has reached 0.30"
+      },
+      {
+        "action": "BLOCK_CARD",
+        "route": "L1",
+        "reason": "R2: customer denied the transaction"
+      }
+    ],
+    "what_changed": "Customer directly reported this transaction as unauthorized at intake (model-assessed probability was 0.85); the customer's own report takes precedence, and the case was confirmed as fraud."
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 0,
+      "assumed_response": "Customer C08299 message: 'I never made this $30.02 purchase. Please check my card.' Refers to 3581141.",
+      "response_source": "customer_initiated_report"
+    }
+  ],
+  "metrics": {
+    "tool_calls": 6
+  }
+}
