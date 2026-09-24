@@ -1,0 +1,8 @@
+python-dotenv
+tigergraph-mcp
+mcp
+langgraph
+langchain
+langchain-google-genai
+fastapi
+uvicorn
